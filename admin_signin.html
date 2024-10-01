@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - E-commerce Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Global Styles */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      /* Admin Sign In Section Styles */
+
+      .admin-signin {
+        max-width: 300px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .admin-signin h2 {
+        margin-top: 0;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .admin-signin form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .admin-signin label {
+        margin-bottom: 10px;
+      }
+
+      .admin-signin input[type="text"],
+      .admin-signin input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      .admin-signin button[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .admin-signin button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+      </div>
+
+      <div class="header-right">
+        <!-- Original buttons visible on large screens -->
+        <a class="search-buttons" href="admin_dashboard.html">Dashboard</a>
+        <a class="search-buttons" href="admin_add_product.html">Add Product</a>
+        <a class="search-buttons" href="admin_view_orders.html">View Orders</a>
+        <a class="search-buttons" href="index.html">View Store</a>
+        <a class="search-buttons" href="admin_signin.html">Admin Sign In</a>
+        <a class="search-buttons" href="#" onclick="logoutAdmin()">Logout</a>
+      
+        <!-- Dropdown menu for smaller screens -->
+        <div class="dropdown-menu">
+          <button class="dropdown-toggle" onclick="toggleDropdown()">Menu</button>
+          <div class="dropdown-content" id="dropdownContent">
+     
+            <a href="admin_signin.html">Admin Sign In</a>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="admin-signin">
+      <h2>Admin Sign In</h2>
+      <form id="admin-signin-form">
+        <label for="admin-username">Username:</label>
+        <input type="text" id="admin-username" required />
+
+        <label for="admin-password">Password:</label>
+        <input type="password" id="admin-password" required />
+
+        <button type="submit">Sign In as Admin</button>
+      </form>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

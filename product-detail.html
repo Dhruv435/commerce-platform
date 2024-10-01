@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <style>
+      /* Basic resets */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .product-detail {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      .product-detail img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .product-detail h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .product-detail p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .product-detail button {
+        padding: 10px 20px;
+        background-color: #febd69;
+        border: none;
+        color: black;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .product-detail button:hover {
+        background-color: #f3a847;
+      }
+      .search-buttons {
+        padding: 10px 20px;
+        background-color: #ea9e3a;
+        border: none;
+        color: black;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .search-buttons:hover {
+        background-color: #f3a847;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #232f3e;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        height: 40px;
+        margin-right: 20px;
+      }
+      .delivery-info {
+        display: inline-block;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+
+      .home-icon {
+        margin-left: 10px;
+        font-size: 20px; /* Adjust the size of the icon */
+        color: rgb(255, 255, 255); /* Set the color of the icon */
+        text-decoration: none;
+      }
+
+      .home-icon:hover {
+        color: #f0c14b; /* Change color on hover */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <header>
+    <div class="header-left">
+      <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+      <div class="delivery-info">
+        Delivering to Rajkot 360004
+        <a href="index.html" class="home-icon">
+          <i class="fa fa-home"></i>
+          <!-- Font Awesome Home Icon -->
+        </a>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <a class="search-buttons" href="index.html">Home</a>
+      <a class="search-buttons" href="cart.html">Cart</a>
+      <a class="search-buttons" href="bag.html">Bag</a>
+      <a class="search-buttons" href="orders.html">Orders</a>
+      <a class="search-buttons" href="user.html">Profile</a>
+    </div>
+  </header>
+
+  <body>
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+      <div id="product-detail-container">
+        <!-- Product details will be dynamically generated here -->
+      </div>
+    </section>
+
+    <script>
+      function getProductIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("id");
+      }
+
+      function loadProductDetail() {
+        const productId = getProductIdFromUrl();
+        const products = JSON.parse(localStorage.getItem("products"));
+        const product = products.find((p) => p.id == productId);
+
+        if (product) {
+          const productDetailContainer = document.getElementById(
+            "product-detail-container"
+          );
+          productDetailContainer.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p>Price: ₹${product.price}</p>
+                `;
+        } else {
+          console.error("Product not found");
+          document.getElementById("product-detail-container").innerHTML =
+            "<p>Product not found.</p>";
+        }
+      }
+
+      // Load the product detail when the page is ready
+      document.addEventListener("DOMContentLoaded", loadProductDetail);
+    </script>
+  </body>
+</html>

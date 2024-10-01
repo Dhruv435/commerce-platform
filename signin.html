@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - E-commerce Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Global Styles */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      /* Sign In Section Styles */
+
+      .signin {
+        max-width: 300px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .signin h2 {
+        margin-top: 0;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .signin form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .signin label {
+        margin-bottom: 10px;
+      }
+
+      .signin input[type="text"],
+      .signin input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      .signin button[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .signin button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+
+      .signin p {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .signin a {
+        text-decoration: none;
+        color: #337ab7;
+      }
+
+      .signin a:hover {
+        color: #23527c;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+        <div class="delivery-info">
+          Delivering to Rajkot 360004
+          <a href="index.html" class="home-icon">
+            <i class="fa fa-home"></i>
+            <!-- Font Awesome Home Icon -->
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <a class="search-buttons" href="index.html">Home</a>
+        <a class="search-buttons" href="signup.html">Sign Up</a>
+        <a class="search-buttons" href="admin_signin.html">Admin Sign In</a>
+      </div>
+    </header>
+
+    <section class="signin">
+      <h2>Sign In</h2>
+      <form id="signin-form">
+        <label for="signin-username">Username:</label>
+        <input type="text" id="signin-username" required />
+
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" required />
+
+        <button type="submit">Sign In</button>
+      </form>
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-commerce Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+     <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+          <div class="delivery-info">
+            Welcome to e-commerce
+              <a href="index.html" class="home-icon">
+                  <i class="fa fa-home"></i> <!-- Font Awesome Home Icon -->
+              </a>
+          </div>
+      </div>
+     
+      
+    <div class="header-right">
+        <!-- Original buttons visible on large screens -->
+        <a class="search-buttons" href="index.html" id="home-btn" onclick="handleButtonClick(event, 'index.html')">Home</a>
+        <a class="search-buttons" href="cart.html" id="cart-btn" onclick="handleButtonClick(event, 'cart.html')">Cart</a>
+        <a class="search-buttons" href="bag.html" id="bag-btn" onclick="handleButtonClick(event, 'bag.html')">Bag</a>
+        <a class="search-buttons" href="orders.html" id="orders-btn" onclick="handleButtonClick(event, 'orders.html')">Orders</a>
+        <a class="search-buttons" href="user.html" id="profile-btn" onclick="handleButtonClick(event, 'user.html')">Profile</a>
+        <a class="search-buttons" href="signin.html">Sign In</a>
+      
+        <!-- Dropdown menu for smaller screens -->
+        <div class="dropdown-menu">
+          <button class="dropdown-toggle" onclick="toggleDropdown()">Menu</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html" onclick="handleButtonClick(event, 'index.html')">Home</a>
+            <a href="cart.html" onclick="handleButtonClick(event, 'cart.html')">Cart</a>
+            <a href="bag.html" onclick="handleButtonClick(event, 'bag.html')">Bag</a>
+            <a href="orders.html" onclick="handleButtonClick(event, 'orders.html')">Orders</a>
+
+            <a href="signin.html">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="user-profile">
+        <div class="profile-image-container">
+            <img id="profile-image" src="default-profile.png" alt="Profile Image">
+            <input type="file" id="profile-image-input" accept="image/*" style="display: none;">
+            <button id="change-image-btn" title="Change Profile Image">&#9998;</button>
+        </div>
+
+        <!-- Username Display -->
+        <h2 id="username-display">Username</h2>
+
+
+   <!-- Additional Information Sections -->
+   <div class="additional-info">
+    <h2>Orders</h2>
+    <br>
+    <div class="info-item"> <a style="text-decoration: none;" href="orders.html">Your Orders</a> </div>
+    <div class="info-item"> <a style="text-decoration: none;" href="cart.html">Your Cart</a> </div>
+
+    <br><br>
+
+    <h2>Account Setting</h2>
+    <br>
+    <div class="info-item">Login & Security</div>
+    <div class="info-item">Devices</div>
+    <div class="info-item">Membership & Subscription</div>
+    <div class="info-item">Manage Prime Membership</div>
+    <div class="info-item">create Free Business Account</div>
+    <div class="info-item">Review Your Purchases</div>
+    <div class="info-item">Recently Viewed Items</div>
+    <!-- Add more sections as needed -->
+   
+    
+<br><br>
+
+        <!-- User Details Form -->
+        <div class="user-details-container">
+            <form id="user-details-form">
+                <div class="form-group">
+                    <label for="address"><h2>Address:</h2></label>
+                    <br>
+                    <input type="text" id="address" placeholder="Enter your address" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile-number"><b>Mobile Number:</b></label>
+                    <input type="tel" id="mobile-number" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>Change Email:</b></label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="city"><b>City:</b></label>
+                    <input type="text" id="city" placeholder="Enter your city" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="save-btn">Save</button>
+                    <button type="button" id="edit-btn" style="display: none;">Edit</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+        <h2>Personalization</h2>
+        <br>
+        <div class="info-item">Wish List</div>
+        <div class="info-item">Profile</div>
+        <div class="info-item">Your Recommendation</div>
+        <div class="info-item">Shop The Kid's Store By Age</div>
+        <br><br>
+        <h2>Manage Your Data</h2>
+        <br>
+        <div class="info-item">Request your Data</div>
+        <div class="info-item">Close Your Amezon Account</div>
+        <div class="info-item">Manage Apps And Services With Data Access</div>
+        <div class="info-item">Privacy Notice</div>
+     <br><br><br><br><br><br>
+
+
+
+
+
+        <button onclick="logoutUser()">Logout</button>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Display logged-in user's username
+        const username = localStorage.getItem('loggedInUser');
+        if (username) {
+            document.getElementById('user-username').textContent = username;
+        } else {
+            window.location.href = 'signin.html';
+        }
+    </script>
+</body>
+</html>

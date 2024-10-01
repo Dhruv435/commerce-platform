@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - E-commerce Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Global Styles */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      /* Sign Up Section Styles */
+
+      .signup {
+        max-width: 300px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .signup h2 {
+        margin-top: 0;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .signup form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .signup label {
+        margin-bottom: 10px;
+      }
+
+      .signup input[type="text"],
+      .signup input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      .signup button[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .signup button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+
+      .signup p {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .signup a {
+        text-decoration: none;
+        color: #337ab7;
+      }
+
+      .signup a:hover {
+        color: #23527c;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+        <div class="delivery-info">
+          Delivering to Rajkot 360004
+          <a href="index.html" class="home-icon">
+            <i class="fa fa-home"></i>
+            <!-- Font Awesome Home Icon -->
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <a class="search-buttons" href="index.html">Home</a>
+        <a class="search-buttons" href="signin.html">Sign In</a>
+        <a class="search-buttons" href="admin_signin.html">Admin Sign In</a>
+      </div>
+    </header>
+
+    <section class="signup">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" required />
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" required />
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="signin.html">Sign In</a></p>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - User Details</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+        <div class="delivery-info">
+          Welcome to e-commerce
+          <a href="index.html" class="home-icon">
+            <i class="fa fa-home"></i>
+            <!-- Font Awesome Home Icon -->
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <a class="search-buttons" href="admin_dashboard.html">Dashboard</a>
+
+        <a class="search-buttons" href="admin_add_product.html">Add Product</a>
+        <a class="search-buttons" href="admin_view_orders.html">View Orders</a>
+        <a class="search-buttons" href="index.html">View Store</a>
+        <a class="search-buttons" href="#" onclick="logoutAdmin()"
+          >Admin Logout</a
+        >
+      </div>
+    </header>
+
+    <section class="admin-user-details">
+      <h2>Registered Users</h2>
+      <table id="admin-user-details-table">
+        <thead>
+          <tr>
+            <th>Profile Image</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Last Login</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- User details will be dynamically generated here -->
+        </tbody>
+      </table>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

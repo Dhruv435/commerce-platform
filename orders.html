@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - E-commerce Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Amazon Logo" class="logo" />
+        <div class="delivery-info">
+          Welcome to e-commerce
+          <a href="index.html" class="home-icon">
+            <i class="fa fa-home"></i>
+            <!-- Font Awesome Home Icon -->
+          </a>
+        </div>
+      </div>
+     
+      <div class="header-right">
+        <!-- Original buttons visible on large screens -->
+        <a class="search-buttons" href="index.html" id="home-btn" onclick="handleButtonClick(event, 'index.html')">Home</a>
+        <a class="search-buttons" href="cart.html" id="cart-btn" onclick="handleButtonClick(event, 'cart.html')">Cart</a>
+        <a class="search-buttons" href="bag.html" id="bag-btn" onclick="handleButtonClick(event, 'bag.html')">Bag</a>
+        <a class="search-buttons" href="orders.html" id="orders-btn" onclick="handleButtonClick(event, 'orders.html')">Orders</a>
+        <a class="search-buttons" href="user.html" id="profile-btn" onclick="handleButtonClick(event, 'user.html')">Profile</a>
+        <a class="search-buttons" href="signin.html">Sign In</a>
+      
+        <!-- Dropdown menu for smaller screens -->
+        <div class="dropdown-menu">
+          <button class="dropdown-toggle" onclick="toggleDropdown()">Menu</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html" onclick="handleButtonClick(event, 'index.html')">Home</a>
+            <a href="cart.html" onclick="handleButtonClick(event, 'cart.html')">Cart</a>
+            <a href="bag.html" onclick="handleButtonClick(event, 'bag.html')">Bag</a>
+            
+            <a href="user.html" onclick="handleButtonClick(event, 'user.html')">Profile</a>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Orders Section -->
+    <section class="orders">
+      <h2>My Orders</h2>
+      <table id="orders-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date & Time</th>
+            <th>Day</th>
+          </tr>
+        </thead>
+        <tbody id="orders-table-body">
+          <!-- Orders will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>
